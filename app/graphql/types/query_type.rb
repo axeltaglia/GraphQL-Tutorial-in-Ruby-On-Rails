@@ -1,12 +1,19 @@
 module Types
   class QueryType < Types::BaseObject
-    # Add root-level fields here.
-    # They will be entry points for queries on your schema.
 
-    field :all_products, [ProductType], null: false
+    # Products
+    field :products, [ProductType], null: false
 
-    def all_products
+    def products
       Product.all
+    end
+
+
+    # Users
+    field :users, [UserType], null: false
+
+    def users
+      User.all
     end
   end
 end
